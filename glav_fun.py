@@ -1,7 +1,8 @@
 import random
+import mouse
 import time
 import keyboard
-import os
+import subprocess
 import datetime
 from main import recognize_speech
 import sys
@@ -23,14 +24,27 @@ def what_time():
     engine.say(current_time)
     engine.runAndWait()
     
+    
 #нажатие клафиш
-def combo():
-    x = recognize_speech()
-    if x == "комбо 1":
-        for i in "op":
-            keyboard.send(str(i))
-
-
+def telegram():
+    mouse.move(150, 63)
+    mouse.click(button='left')
+    
+    engine.say("кому пишем?")
+    engine.runAndWait()
+    
+    piop = recognize_speech()
+    keyboard.write(str(piop))
+    keyboard.send("ENTER")
+    
+    engine.say("что пишем?")
+    engine.runAndWait()
+    
+    send = recognize_speech()
+    print("это ты пишешь "+send)
+    keyboard.write(str(send))
+    keyboard.send("ENTER")
+    
 
 #закрыть помошникаop
 def exit_program():
@@ -60,7 +74,11 @@ def googletime():
    time.sleep(2)
    print("Натыкал")
    
+def openp():
+    pass
+    
+   
 #откроет рабочий стол   
 def open_desktop():
-    desktop_path = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
-    os.startfile(desktop_path)
+    mouse.move(1919, 1079)
+    mouse.click(button='left')

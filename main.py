@@ -11,7 +11,8 @@ dictionary = {
     'what_time': ['который час', 'сколько время'],
     'exit_program': ['закрыть', 'выйти', 'закрыть программу'],
     'openp': ['открой', 'аткрой'],
-    'combo': ['комбо'],
+    'open_desktop': ['рабочий стол'],
+    'telegram': ['напиши'],
     }
 
 def recognize_speech():
